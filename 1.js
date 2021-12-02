@@ -1,11 +1,7 @@
-const fs = require("fs");
+const util = require("./util");
 
-const data = fs.readFileSync("1.txt", "utf8");
-const arr = data
-    .toString()
-    .split("\n")
-    .filter((x) => x !== "")
-    .map(Number);
+let arr = util.getFileContentFormatted("./1.txt");
+arr = arr.map(Number);
 
 /** Part 1 */
 function part1() {
