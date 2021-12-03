@@ -5,7 +5,7 @@ function getFileContent(filePath) {
 }
 
 function getFileContentFormatted(filePath) {
-  return getFileContent(filePath).split('\n').map(line => line.trim())
+  return getFileContent(filePath).split('\n').map(line => line.trim()).filter(line => line.length > 0)
 }
 
 module.exports = {
