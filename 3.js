@@ -53,24 +53,17 @@ function part2(arr) {
       }
     }
 
-    console.log(oxygenRating.length);
-    console.log(j, zeroBits[j], oneBits[j]);
     if (oneBits[j] >= zeroBits[j]) {
-      console.log("filter 1");
       oxygenRating = oxygenRating.filter((element) => element[j] === "1");
     } else {
-      console.log("filter 0");
       oxygenRating = oxygenRating.filter((element) => element[j] === "0");
     }
-
-    // console.log({ oxygenRating })
 
     if (oxygenRating.length === 1) {
       break;
     }
   }
 
-  console.log("------------------------------------");
   zeroBits = Array.from({ length: arr[0].length }, () => 0);
   oneBits = Array.from({ length: arr[0].length }, () => 0);
   let co2Rating = [...arr];
@@ -85,13 +78,9 @@ function part2(arr) {
       }
     }
 
-    console.log(co2Rating.length);
-    console.log(j, zeroBits[j], oneBits[j]);
     if (oneBits[j] >= zeroBits[j]) {
-      console.log("filter 0");
       co2Rating = co2Rating.filter((element) => element[j] === "0");
     } else {
-      console.log("filter 1");
       co2Rating = co2Rating.filter((element) => element[j] === "1");
     }
 
@@ -100,11 +89,7 @@ function part2(arr) {
     }
   }
 
-  console.log({ oxygenRating: parseInt(oxygenRating, 2), co2Rating: parseInt(co2Rating, 2) });
-
   console.log("Part 2:", parseInt(oxygenRating, 2) * parseInt(co2Rating, 2));
-
-  // console.log({ zeroBits, oneBits });
 }
 
 part2(input);
